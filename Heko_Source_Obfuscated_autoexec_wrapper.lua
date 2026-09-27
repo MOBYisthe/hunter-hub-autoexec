@@ -1,5 +1,4 @@
 -- Auto-execute compatibility wrapper (payload preserved below).
--- This wrapper only delays startup until Roblox and the local player exist.
 local __autoexec_ok, __autoexec_err = pcall(function()
     if not game:IsLoaded() then game.Loaded:Wait() end
     local Players = game:GetService("Players")
@@ -10,9 +9,7 @@ local __autoexec_ok, __autoexec_err = pcall(function()
 end)
 if not __autoexec_ok then
     warn("[Hunter Hub autoexec startup]: " .. tostring(__autoexec_err))
-    return
-end
--- [[ Luraph Script Engine v14.2.1 [PRO-PROTECTED] ]]
+else-- [[ Luraph Script Engine v14.2.1 [PRO-PROTECTED] ]]
 -- [[ Security Layer: Custom VM Byte Loader + Multi-Key XOR + Anti-Dump ]]
 -- [[ Target Platform: Roblox Luau / Standard Lua 5.1 Executor ]]
 
@@ -245,5 +242,7 @@ if not status then
     else
         print("[Luraph VM Exception]: " .. tostring(result))
     end
+end
+
 end
 
